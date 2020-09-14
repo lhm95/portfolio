@@ -54,7 +54,7 @@ export default () => {
           <ReactLogo>
             <FaReact />
           </ReactLogo>
-          이 페이지는 React Js로 제작되었습니다.
+          이 페이지는 React로 제작되었습니다.
         </HeaderTextRight>
       </HeaderWrapper>
     </Header>

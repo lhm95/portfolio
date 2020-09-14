@@ -5,6 +5,7 @@ import Theme from "../src/Styles/Theme";
 import Router from "../src/Components/Router";
 import Header from "../src/Components/Header";
 import Footer from "../src/Components/Footer";
+import "../src/Styles/common.scss";
 
 export default () => (
   <ThemeProvider theme={Theme}>
