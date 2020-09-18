@@ -100,7 +100,7 @@ export default () => {
   const [action, setAction] = useState("intro");
 
   if (action === "intro") {
-    setTimeout(() => setAction("about"), 1000); //9200
+    setTimeout(() => setAction("about"), 9200); //9200
   }
 
   const moreBtn = () => {
