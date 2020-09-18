@@ -5,6 +5,7 @@ import FadeIn from "react-fade-in";
 import { Helmet } from "react-helmet";
 import "../Styles/button.scss";
 import Navigation from "../Components/Navigation";
+import Album from "../Components/Album";
 
 const Wrapper = styled.div`
   min-height: 90vh;
@@ -55,7 +56,6 @@ const TitleSpan = styled.span`
 const ContentSpan = styled.span`
   display: block;
   font-size: 1.8vw;
-  color: #000;
 `;
 
 const MoreTitle = styled.span`
@@ -69,7 +69,6 @@ const MoreTitle = styled.span`
 const MoreContent = styled.span`
   display: block;
   font-size: 1.8vw;
-  color: #000;
   margin: 30px 0;
 `;
 
@@ -77,17 +76,11 @@ const MoreContentMini = styled.span`
   display: inline-block;
   font-size: 0.8vw;
   font-weight: 400;
-  color: #bbb;
   margin-left: 10px;
 `;
 
 export default () => {
   const [action, setAction] = useState("intro");
-  // const [menu, setMenu] = useState("off");
-
-  // if (menu === "on") {
-  //   console.log("안녕");
-  // }
 
   if (action === "intro") {
     setTimeout(() => setAction("about"), 14500); //14500
@@ -95,6 +88,9 @@ export default () => {
 
   const moreBtn = () => {
     setAction("more");
+  };
+  const albumBtn = () => {
+    setAction("album");
   };
 
   return (
@@ -184,9 +180,16 @@ export default () => {
             >
               @ggr.lhm<MoreContentMini>Instagram</MoreContentMini>
             </MoreContent>
+            <button onClick={albumBtn} class="learn-more">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Album</span>
+            </button>
           </FadeIn>
         )}
-        {action !== "intro" && <Navigation />}
+        {action === "album" && <Album />}
+        {action !== "intro" && <Navigation setAction={setAction} />}
       </Box>
     </Wrapper>
   );

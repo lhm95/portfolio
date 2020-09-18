@@ -3,12 +3,131 @@ body .moreTitle2 {
 }
 
 body .moreContent2 {
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   cursor: pointer;
+  color: #2b64d2;
 }
 
 body .LeftDot {
   position: absolute;
   left: 10px;
   top: 50%;
+}
+
+.LeftDot.on {
+  color: #fff;
+  background: #fff;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #10171d;
+  color: #dfdfdf;
+
+  .navbar {
+    background-color: #1b2938;
+  }
+
+  .dark-mode-toggle > button {
+    color: #999;
+    &:last-child {
+      color: lightblue;
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: #95d3ff;
+  padding: 20px;
+}
+
+button {
+  color: #006688;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+body.dark-mode .content code {
+  background-color: #0e1114;
+}
+
+body.dark-mode .content a {
+  color: #ee09;
+}
+
+body.dark-mode .content button {
+  color: #ee09;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  margin: 0 auto;
+  & > button {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #ffe600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:last-child {
+      color: #666;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.toggle-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"].dmcheck {
+  width: 25px;
+  height: 6px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+
+  &:checked + label {
+    left: 20px;
+  }
+
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+
+  & + label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 2px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #f6f6f6;
+  }
 }

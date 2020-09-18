@@ -7,13 +7,15 @@ import Header from "../src/Components/Header";
 import Footer from "../src/Components/Footer";
 import "../src/Styles/common.scss";
 
-export default () => (
-  <ThemeProvider theme={Theme}>
-    <>
-      <GlobalStyles />
-      <Header />
-      <Router />
-      <Footer />
-    </>
-  </ThemeProvider>
-);
+export default () => {
+  return (
+    <ThemeProvider theme={Theme}>
+      <>
+        <GlobalStyles />
+        <Header />
+        <Router />
+        <Footer />
+      </>
+    </ThemeProvider>
+  );
+};

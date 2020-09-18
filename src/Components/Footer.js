@@ -12,7 +12,6 @@ const Footer = styled.footer`
 
 const Copyright = styled.p`
   width: 100%;
-  color: #000;
   text-align: center;
   padding: 10px 0;
 `;
