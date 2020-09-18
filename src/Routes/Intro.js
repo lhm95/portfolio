@@ -5,13 +5,16 @@ import FadeIn from "react-fade-in";
 import { Helmet } from "react-helmet";
 import "../Styles/button.scss";
 import Navigation from "../Components/Navigation";
+import { MdMoreVert } from "react-icons/md";
 import Album from "../Components/Album";
+import myPhoto from "../images/photo.jpg";
 
 const Wrapper = styled.div`
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 80px 0;
 `;
 
 const Box = styled.div`
@@ -35,13 +38,18 @@ const Description = styled.span`
 
 const Profile = styled.div`
   display: block;
-  width: 30%;
+  width: 15%;
   margin: 0 auto;
-  border-radius: 20px;
-  background: #f2f2f2;
   text-align: center;
-  padding: 20px 0%;
   margin-top: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  & > img {
+    width: 100%;
+    display: block;
+  }
 `;
 
 const TitleSpan = styled.span`
@@ -79,11 +87,20 @@ const MoreContentMini = styled.span`
   margin-left: 10px;
 `;
 
+const LeftDot = styled.div`
+  position: fixed;
+  left: 10px;
+  top: 45%;
+  font-size: 2.3vw;
+  cursor: pointer;
+  z-index: initial;
+`;
+
 export default () => {
   const [action, setAction] = useState("intro");
 
   if (action === "intro") {
-    setTimeout(() => setAction("about"), 14500); //14500
+    setTimeout(() => setAction("about"), 1000); //9200
   }
 
   const moreBtn = () => {
@@ -106,8 +123,8 @@ export default () => {
           <Intro>
             <FadeIn de>
               <ReactTypingEffect
-                text="Ok, From now on, let me introduce my portfolio."
-                speed="200"
+                text="Hello, I'm Front-End Developer"
+                speed="150"
               />
               <Description>
                 타이핑이 끝난 후 자동으로 다음 페이지가 소개됩니다.
@@ -119,7 +136,9 @@ export default () => {
           <>
             <FadeIn>
               <div>Front-End Developer</div>
-              <Profile>?</Profile>
+              <Profile>
+                <img src={myPhoto} alt="myPhoto" />
+              </Profile>
               <TitleSpan>name</TitleSpan>
               <ContentSpan>이호명</ContentSpan>
               <TitleSpan>phone</TitleSpan>
@@ -151,11 +170,12 @@ export default () => {
               웹 디자인 기능사<MoreContentMini>2018.12</MoreContentMini>
             </MoreContent>
             <MoreContent>
-              컴퓨터 그래픽스 운용기사<MoreContentMini>2019.09</MoreContentMini>
+              컴퓨터 그래픽스 운용 기능사
+              <MoreContentMini>2019.09</MoreContentMini>
             </MoreContent>
-            <MoreContent>
+            {/* <MoreContent>
               정보처리 산업기사<MoreContentMini>2020.12</MoreContentMini>
-            </MoreContent>
+            </MoreContent> */}
             <MoreTitle className="moreTitle2">Blog / Github</MoreTitle>
             <MoreContent
               className="moreContent2"
@@ -189,7 +209,12 @@ export default () => {
           </FadeIn>
         )}
         {action === "album" && <Album />}
-        {action !== "intro" && <Navigation setAction={setAction} />}
+        {action !== "intro" && (
+          <LeftDot>
+            <MdMoreVert onClick={() => setAction("navi")} />
+          </LeftDot>
+        )}
+        {action === "navi" && <Navigation setAction={setAction} />}
       </Box>
     </Wrapper>
   );
