@@ -120,6 +120,12 @@ const LeftDot = styled.div`
   }
 `;
 
+const LineHeight = styled.div`
+  @media only screen and (max-width: 768px) {
+    line-height: 13vw;
+  }
+`;
+
 export default () => {
   const [action, setAction] = useState("intro");
 
@@ -138,11 +144,13 @@ export default () => {
       <Box>
         {action === "intro" && (
           <Intro>
-            <FadeIn de>
-              <ReactTypingEffect
-                text="Hello, I'm Front-End Developer"
-                speed="150"
-              />
+            <FadeIn>
+              <LineHeight>
+                <ReactTypingEffect
+                  text="Hello, I'm Front-End Developer"
+                  speed="150"
+                />
+              </LineHeight>
               <Description>
                 타이핑이 끝난 후 자동으로 다음 페이지가 소개됩니다.
               </Description>
