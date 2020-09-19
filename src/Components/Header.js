@@ -10,6 +10,7 @@ const Header = styled.header`
   width: 100%;
   border: 0;
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
   background-color: #000000;
@@ -17,7 +18,6 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   padding: 15px 0px;
-  position: relative;
 `;
 
 const HeaderWrapper = styled.div`
@@ -44,6 +44,9 @@ const HeaderTextRight = styled.p`
   color: #fff;
   right: 20px;
   top: 7px;
+  @media only screen and (max-width: 768px) {
+    right: 8px;
+  }
 `;
 
 const ReactLogo = styled.span`
