@@ -33,6 +33,9 @@ const HeaderTextLeft = styled.p`
   color: #fff;
   left: 20px;
   top: 6px;
+  @media only screen and (max-width: 768px) {
+    font-size: 0;
+  }
 `;
 
 const HeaderTextRight = styled.p`
@@ -55,6 +58,9 @@ const ThemeBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    left: 5px;
+  }
 `;
 
 const ThemeBtn = styled.button`
@@ -62,6 +68,9 @@ const ThemeBtn = styled.button`
   display: inline-block;
   line-height: 9px;
   margin: 0 10px;
+  @media only screen and (max-width: 768px) {
+    margin: 0 4px;
+  }
 `;
 
 export default () => {

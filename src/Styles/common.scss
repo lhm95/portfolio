@@ -6,6 +6,9 @@ body .moreContent2 {
   font-size: 1.7vw;
   cursor: pointer;
   color: #2b64d2;
+  @media only screen and (max-width: 768px) {
+    font-size: 6vw;
+  }
 }
 
 body .LeftDot {

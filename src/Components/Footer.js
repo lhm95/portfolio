@@ -8,6 +8,7 @@ const Footer = styled.footer`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
+  margin-bottom: 15px;
 `;
 
 const Copyright = styled.p`

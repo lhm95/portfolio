@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.2.0"
   },
   "homepage": "http://lhm95.github.io/portfolio"
 }

@@ -22,6 +22,9 @@ const Box = styled.div`
   font-weight: bold;
   width: 100%;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    font-size: 8vw;
+  }
 `;
 
 const Intro = styled.p`
@@ -50,6 +53,9 @@ const Profile = styled.div`
     width: 100%;
     display: block;
   }
+  @media only screen and (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const TitleSpan = styled.span`
@@ -59,11 +65,17 @@ const TitleSpan = styled.span`
   font-size: 1vw;
   font-weight: 400;
   color: #bbb;
+  @media only screen and (max-width: 768px) {
+    font-size: 3vw;
+  }
 `;
 
 const ContentSpan = styled.span`
   display: block;
   font-size: 1.8vw;
+  @media only screen and (max-width: 768px) {
+    font-size: 6.5vw;
+  }
 `;
 
 const MoreTitle = styled.span`
@@ -72,12 +84,18 @@ const MoreTitle = styled.span`
   font-weight: 400;
   color: #bbb;
   margin-bottom: 15px;
+  @media only screen and (max-width: 768px) {
+    font-size: 3vw;
+  }
 `;
 
 const MoreContent = styled.span`
   display: block;
   font-size: 1.8vw;
   margin: 30px 0;
+  @media only screen and (max-width: 768px) {
+    font-size: 6vw;
+  }
 `;
 
 const MoreContentMini = styled.span`
@@ -85,6 +103,9 @@ const MoreContentMini = styled.span`
   font-size: 0.8vw;
   font-weight: 400;
   margin-left: 10px;
+  @media only screen and (max-width: 768px) {
+    font-size: 3vw;
+  }
 `;
 
 const LeftDot = styled.div`
@@ -94,21 +115,17 @@ const LeftDot = styled.div`
   font-size: 2.3vw;
   cursor: pointer;
   z-index: initial;
+  @media only screen and (max-width: 768px) {
+    font-size: 5vw;
+  }
 `;
 
 export default () => {
   const [action, setAction] = useState("intro");
 
   if (action === "intro") {
-    setTimeout(() => setAction("about"), 9200); //9200
+    setTimeout(() => setAction("about"), 9300); //9300
   }
-
-  const moreBtn = () => {
-    setAction("more");
-  };
-  const albumBtn = () => {
-    setAction("album");
-  };
 
   return (
     <Wrapper>
@@ -151,7 +168,7 @@ export default () => {
               <ContentSpan>
                 KAC 한국예술원<MoreContentMini>중퇴</MoreContentMini>
               </ContentSpan>
-              <button onClick={moreBtn} class="learn-more">
+              <button onClick={() => setAction("more")} class="learn-more">
                 <span class="circle" aria-hidden="true">
                   <span class="icon arrow"></span>
                 </span>
@@ -200,7 +217,7 @@ export default () => {
             >
               @ggr.lhm<MoreContentMini>Instagram</MoreContentMini>
             </MoreContent>
-            <button onClick={albumBtn} class="learn-more">
+            <button onClick={() => setAction("album")} class="learn-more">
               <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
               </span>

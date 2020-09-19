@@ -21,6 +21,9 @@ const MenuText = styled.span`
   color: #fff;
   font-size: 4vw;
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    font-size: 6vw;
+  }
 `;
 
 export default (props) => {

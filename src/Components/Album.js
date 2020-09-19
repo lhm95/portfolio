@@ -17,7 +17,6 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 0;
 `;
 
 const Content = styled.ul`
@@ -28,6 +27,9 @@ const Contents = styled.li`
   display: inline-block;
   padding: 10px;
   margin-bottom: 15px;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ImgArea = styled.div`
@@ -38,13 +40,22 @@ const ImgArea = styled.div`
   margin-bottom: 30px;
   cursor: pointer;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
   & > img {
     width: 100%;
     object-fit: cover;
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
   }
 `;
 const ImgDesc = styled.p`
   font-size: 1.8vw;
+  @media only screen and (max-width: 768px) {
+    font-size: 6vw;
+  }
 `;
 const ImgDate = styled.span`
   font-size: 0.8vw;
@@ -52,6 +63,9 @@ const ImgDate = styled.span`
   display: block;
   margin-top: 10px;
   margin-bottom: 40px;
+  @media only screen and (max-width: 768px) {
+    font-size: 4vw;
+  }
 `;
 
 export default () => {
