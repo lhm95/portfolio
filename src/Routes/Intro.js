@@ -167,7 +167,7 @@ export default () => {
               <TitleSpan>name</TitleSpan>
               <ContentSpan>이호명</ContentSpan>
               <TitleSpan>phone</TitleSpan>
-              <ContentSpan>010-3915-1421</ContentSpan>
+              <ContentSpan>010-4715-1421</ContentSpan>
               <TitleSpan>mail</TitleSpan>
               <ContentSpan>lhm95@kakao.com</ContentSpan>
               <TitleSpan>birth</TitleSpan>
@@ -198,9 +198,9 @@ export default () => {
               컴퓨터 그래픽스 운용 기능사
               <MoreContentMini>2019.09</MoreContentMini>
             </MoreContent>
-            {/* <MoreContent>
-              정보처리 산업기사<MoreContentMini>2020.12</MoreContentMini>
-            </MoreContent> */}
+            <MoreContent>
+              정보처리 산업기사<MoreContentMini>2020.11</MoreContentMini>
+            </MoreContent>
             <MoreTitle className="moreTitle2">Blog / Github</MoreTitle>
             <MoreContent
               className="moreContent2"
